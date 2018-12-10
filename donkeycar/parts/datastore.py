@@ -161,7 +161,7 @@ class Tub(object):
                 self.get_record(ix)
             except:
                 problems = True
-                if fix is False:
+                if fix == False:
                     logger.warning('problems with record {} : {}'.format(ix, self.path))
                 else:
                     logger.warning('problems with record {}, removing: {}'.format(ix, self.path))

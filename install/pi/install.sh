@@ -1,5 +1,21 @@
 # Script to install everything needed for donkeycar except the donkeycar library
 
+
+# Get witch Pi version
+echo "Enter the Pi number (3 or 0)"
+read pi_num
+if  [ $pi_num == 3 ]; then
+  echo "installing for Pi 3."
+  tf_file=tensorflow-1.8.0-cp35-none-linux_armv7l.whl
+elif [ $pi_num == 0 ]; then
+  echo "installing for Pi Zero."
+  tf_file=tensorflow-1.8.0-cp35-none-linux_armv6l.whl
+else
+  echo "Only Pi 3 and Pi Zero are supported."
+  exit 1
+fi
+
+
 #standard updates (5 min)
 sudo apt update -y
 sudo apt upgrade -y
