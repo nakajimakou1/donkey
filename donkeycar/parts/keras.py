@@ -30,6 +30,8 @@ class KerasPilot:
         train_gen: generator that yields an array of images an array of
 
         """
+        # callback for tensorboard
+        tb_cb = keras.callbacks.TensorBoard(log_dir="~/tflog/", histogram_freq=1, write_graph=True, write_images=True)
 
         # checkpoint to save model after each epoch
         save_best = ModelCheckpoint(saved_model_path,
