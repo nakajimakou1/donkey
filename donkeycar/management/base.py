@@ -125,7 +125,8 @@ class FindCar(BaseCommand):
     def run(self, args):
         print('Looking up your computer IP address...')
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8",80))
+        #s.connect(("8.8.8.8",80))
+        s.connect(("192.168.12.2",80))
         ip = s.getsockname()[0]
         print('Your IP address: %s ' %s.getsockname()[0])
         s.close()
