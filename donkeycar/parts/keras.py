@@ -47,7 +47,7 @@ class KerasPilot:
                                    verbose=verbose,
                                    mode='auto')
 
-        callbacks_list = [save_best]
+        callbacks_list = [save_best, tb_cb]
 
         if use_early_stop:
             callbacks_list.append(early_stop)
